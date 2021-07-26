@@ -3,7 +3,7 @@ import pygame
 
 
 # Makes game window and caption
-WIDTH, HEIGHT = 500, 500
+WIDTH, HEIGHT = 800, 800
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("The Game!")
 
@@ -14,8 +14,11 @@ WHITE = (255, 255, 255)
 
 pygame.draw.circle(WIN, WHITE, (250, 250), 50)
 
-pygame.display.update()
 
+
+
+def draw_window():
+    pygame.display.update()
 
 
 def main():
@@ -25,6 +28,8 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+
+        draw_window()
             
     pygame.quit()
 
