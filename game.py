@@ -10,6 +10,7 @@ pygame.display.set_caption("The Game!")
 
 # Place for constants
 WHITE = (255, 255, 255)
+FPS = 60
 
 
 pygame.draw.circle(WIN, WHITE, (250, 250), 50)
@@ -22,9 +23,10 @@ def draw_window():
 
 
 def main():
-    
+    clock = pygame.time.Clock()
     running = True
     while running:
+        clock.tick(FPS)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
