@@ -1,4 +1,5 @@
 import pygame
+import os
 
 
 
@@ -11,14 +12,20 @@ pygame.display.set_caption("The Game!")
 # Place for constants
 WHITE = (255, 255, 255)
 FPS = 60
+SPACESHIP_WIDTH, SPACESHIP_HEIGHT = 55, 40
 
-
-pygame.draw.circle(WIN, WHITE, (250, 250), 50)
-
-
+# Place for files from Assets folder
+YELLOW_SPACESHIP_IMAGE = pygame.image.load(
+    os.path.join("Assets", "spaceship_yellow.png"))
+YELLOW_SPACESHIP = pygame.transform.scale(YELLOW_SPACESHIP_IMAGE, (SPACESHIP_WIDTH, SPACESHIP_HEIGHT))
+RED_SPACESHIP_IMAGE = pygame.image.load(
+    os.path.join("Assets", "spaceship_red.png"))
+RED_SPACESHIP = pygame.transform.scale(RED_SPACESHIP_IMAGE, (SPACESHIP_WIDTH, SPACESHIP_HEIGHT))
 
 
 def draw_window():
+    WIN.fill(WHITE)
+    WIN.blit(YELLOW_SPACESHIP, (300, 100))
     pygame.display.update()
 
 
